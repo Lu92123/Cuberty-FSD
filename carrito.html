@@ -1,43 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="cubo/Logo/logo-only.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <title>Productos</title>
+    <title>Carrito | Cuberty</title>
 </head>
 <body>
-    <!-- Preloader overlay: muestra la animación antes de cargar el contenido -->
     <div id="preloader" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:9999;">
-        <img id="preloader-img" src="cubo/3D/5.png" alt="Animación" width="300">
+        <img id="preloader-img" src="cubo/3D/5.png" alt="Animación de carga" width="300">
     </div>
-    <!-- Contenido principal oculto hasta que termine la animación -->
+
     <div id="content" style="visibility:hidden;">
-        <nav>
-            <ul>
+        <nav aria-label="Navegación principal">
+            <ul class="nav-left">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="productos.html">Productos</a></li>
-                <li><a href="https://lastcubex.com/algorithms">Algoritmos</a></li>
-                <li><a href="carrito.html">Icon-Icons.com</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Registrarse</a></li>
+                <li>
+                    <a href="carrito.html" aria-label="Carrito de compras">
+                        <img src="cubo/Carrito/Carrito_Empty.png" width="30" alt="">
+                    </a>
+                </li>
             </ul>
         </nav>
-        <div class="divsduo">
-            <div class="derechacompra">
-                <!-- Contenido derecho -->
+
+        <main class="cart-page">
+            <header class="cart-heading">
+                <h1>Tu carrito</h1>
+                <p>Revisá tus productos antes de continuar con la compra.</p>
+            </header>
+
+            <div class="cart-layout">
+                <section class="cart-items" aria-label="Productos en el carrito" aria-live="polite">
+                    <div id="lista-carrito"></div>
+                    <p id="carrito-vacio" class="cart-empty" hidden>Tu carrito está vacío. <a href="productos.html">Explorá los productos</a>.</p>
+                </section>
+
+                <aside class="cart-summary" aria-labelledby="cart-summary-title">
+                    <h2 id="cart-summary-title">Resumen de compra</h2>
+                    <dl>
+                        <div>
+                            <dt>Subtotal</dt>
+                            <dd id="cart-subtotal"><span id="total">$0</span></dd>
+                        </div>
+                        <div>
+                            <dt>Envío</dt>
+                            <dd>A calcular</dd>
+                        </div>
+                        <div class="cart-total">
+                            <dt>Total parcial</dt>
+                            <dd id="cart-total" aria-live="polite"><span id="total-final">$0</span></dd>
+                        </div>
+                    </dl>
+                    <p class="cart-shipping-note">El costo de envío se confirmará al finalizar la compra.</p>
+                    <button id="btn-vaciar" class="remove-product" type="button">Vaciar carrito</button>
+                    <button id="btn-finalizar-compra" class="checkout-button" type="button">Finalizar compra</button>
+                    <p id="estado-compra" class="cart-shipping-note" role="status" hidden></p>
+                    <a class="continue-shopping" href="productos.html">Seguir comprando</a>
+                </aside>
             </div>
-            <div class="izquierdaresumen">
-                <!-- Contenido izquierdo -->
-            </div>
-        </div>
+        </main>
 
-
-
-
-
-
+        <footer class="cart-footer">
+            <p>© Todos los derechos reservados a Cuberty</p>
+        </footer>
+    </div>
 
     <script src="animacionimagen.js"></script>
+    <script src="compra.js"></script>
 </body>
 </html>
-
