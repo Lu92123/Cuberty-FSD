@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Log in</title>
+    <style>
+        /* 1. CENTRADO ABSOLUTO EN LA PANTALLA */
+        body {
+            margin: 0;
+            height: 100vh;         
+            display: flex;
+            justify-content: center; 
+            align-items: center;    /* Faltaba esto para centrar verticalmente */
+            background: #222;      
+            font-family: 'Orbitron Black', sans-serif; /* Aplicado globalmente */
+        }
+
+        /* 2. EL CONTENEDOR GRIS */
+        .contenedor-principal-log {
+            background: #494848;
+            width: 100%;
+            max-width: 450px;       /* Ancho ideal para un login */
+            padding: 40px;          /* Bajado de 250px a 40px para que respire sin deformar */
+            box-sizing: border-box; 
+            border-radius: 12px;   
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* Sombra suave opcional */
+        }
+
+        /* 3. EL FORMULARIO ORDENADO EN COLUMNA */
+        .formulario-de-mierda-del-login form {
+            display: flex;
+            flex-direction: column; /* Pone los bloques uno abajo del otro */
+            gap: 25px;              /* Separa el usuario, la contraseña y el botón uniformemente */
+        }
+
+        /* 4. BLOQUES DE CAMPOS (DIVS INTERNOS) */
+        .usuario, .contraseña {
+            display: flex;
+            flex-direction: column; /* Pone el label ARRIBA del input */
+            gap: 10px;              /* Separa el texto del cuadro de escribir */
+        }
+
+        /* ESTILOS DE LOS LABELS */
+        .usuario label, .contraseña label {
+            font-size: 24px;        /* Bajado un poco de 30px porque era enorme, pero mantiene tu estilo */
+            font-weight: 400;
+            color: #fff;
+        }
+
+        /* ESTILOS DE LOS INPUTS */
+        .usuario input, .contraseña input {
+            padding: 12px;
+            width: 100%;            /* Toma el 100% del ancho del contenedor de forma limpia */
+            box-sizing: border-box; /* Evita que el padding rompa el ancho */
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #f5f5f5;
+        }
+
+        /* 5. EL BOTÓN */
+        .enviar {
+            display: flex;
+            justify-content: center; /* Centra el botón horizontalmente */
+            margin-top: 10px;
+        }
+
+        .enviar button {
+            background-color: var(--color-4, #007bff); /* Si var(--color-4) no carga, usa azul por defecto */
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Orbitron Black', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            width: 100%;            /* Hace que el botón ocupe todo el ancho (puedes quitarlo si lo quieres chico) */
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .enviar button:hover {
+            background-color: var(--color-1, #0056b3);
+            color: #333333;
+        }
+    </style>
+</head>
+<body> 
+
+    <div class="contenedor-principal-log">
+        <div class="formulario-de-mierda-del-login">
+            <form>
+                <!-- Bloque Usuario -->
+                <div class="usuario">
+                    <label for="nombre-de-usuario">Nombre De Usuario</label>
+                    <input type="text" id="nombre-de-usuario" placeholder="Ej: Juan Pérez" required>
+                </div>
+                
+                <!-- Bloque Contraseña -->
+                <div class="contraseña">
+                    <label for="contraseña">Contraseña</label>
+                    <input type="password" id="contraseña" placeholder="••••••••" required>
+                </div>
+                
+                <!-- Bloque Botón -->
+                <div class="enviar">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
