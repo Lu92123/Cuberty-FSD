@@ -15,9 +15,13 @@
     <!-- Contenido principal oculto hasta que termine la animación -->
     <div id="content" style="visibility:hidden;">
         <nav>
-            <ul>
+            <ul class="nav-left">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="productos.html">Productos</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
                 <li><a href="carrito.html"><img src="cubo\Carrito\Carrito_Empty.png" width="30px"></a></li>
             </ul>
         </nav>
@@ -40,7 +44,7 @@
                     <p>El cubo de Rubik 3x3 sin stickers para un uso profesional</p>
                 </div>
                 <div class="precio-producto">
-                    <button class="botonCompras"> $5800</button>
+                    <button class="botonCompras" data-id="cubo-3x3-stickerless" data-nombre="Cubo 3x3 Stickerless" data-precio="5800" data-imagen="cubo/Fotos/SL1.jpg" data-descripcion="El cubo de Rubik 3x3 sin stickers para un uso profesional"> $5800</button>
                 </div>
             </div>
             <div class="producto">
@@ -54,7 +58,7 @@
                     <p>El cubo clásico de Rubik 3x3 para un uso casual</p>
                 </div>
                 <div class="precio-producto">
-                    <button class="botonCompras"> $5800</button>
+                    <button class="botonCompras" data-id="cubo-3x3-negro" data-nombre="Cubo 3x3 Negro" data-precio="5800" data-imagen="cubo/Fotos/B1.jpg" data-descripcion="El cubo clásico de Rubik 3x3 para un uso casual"> $5800</button>
                 </div>
             </div>
             
@@ -82,5 +86,6 @@
     </footer>
 
     <script src="animacionimagen.js"></script>
+    <script src="compra.js"></script>
 </body>
 </html>
