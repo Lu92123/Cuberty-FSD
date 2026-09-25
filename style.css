@@ -566,21 +566,10 @@ footer p {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 
 
 
     
-=======
-.cart-page {
-    width: min(1100px, calc(100% - 40px));
-    min-height: calc(100vh - 70px);
-    margin: 0 auto;
-    padding: 110px 0 60px;
-    color: #222;
-    font-family: Arial, sans-serif;
-}
->>>>>>> 22a9bdd1b5b091a31cd0cf9772c8dd28112126e0
 
 .cart-heading {
     margin-bottom: 30px;
