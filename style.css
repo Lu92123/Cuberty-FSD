@@ -834,3 +834,56 @@ footer p {
         grid-column: 1 / -1;
     }
 }
+
+
+.usuario-menu {
+    position: relative;
+}
+
+#botonUsuario {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    font-family: 'Orbitron Black', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    color: white;
+}
+
+.menu-desplegable {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #333;
+    border-radius: 8px;
+    padding: 8px;
+    min-width: 150px;
+    z-index: 1000;
+    font-family: 'Orbitron Black', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+}
+
+.menu-desplegable.mostrar {
+    display: block;
+}
+
+#cerrarSesion {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+#cerrarSesion:hover {
+    background: #555;
+    border-radius: 5px;
+}

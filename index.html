@@ -32,9 +32,29 @@
                 <li><a href="productos.html">Productos</a></li>
             </ul>
             <ul class="nav-right">
-                <li><a href="login.html">Login</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-                <li><a href="carrito.html"><img src="cubo\Carrito\Carrito_Empty.png" width="30px"></a></li>
+
+                <li id="loginLink">
+                    <a href="login.html">Login</a>
+                </li>
+
+                <li id="signupLink">
+                    <a href="signup.html">Sign Up</a>
+                </li>
+
+                <li id="usuarioMenu" class="usuario-menu">
+                    <button id="botonUsuario"></button>
+
+                    <div id="menuDesplegable" class="menu-desplegable">
+                        <button id="cerrarSesion">Cerrar sesión</button>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="carrito.html">
+                        <img src="cubo\Carrito\Carrito_Empty.png" width="30px">
+                    </a>
+                </li>
+
             </ul>
         </nav>
 
@@ -138,5 +158,51 @@
         <p>© Todos los derechos reservados a Cuberty</p>
     </footer>
     <script src="animacionimagen.js"></script>
+    <script>
+        const usuarioGuardado = localStorage.getItem("usuario");
+
+        const loginLink = document.getElementById("loginLink");
+        const signupLink = document.getElementById("signupLink");
+
+        const usuarioMenu = document.getElementById("usuarioMenu");
+        const botonUsuario = document.getElementById("botonUsuario");
+
+        const menuDesplegable = document.getElementById("menuDesplegable");
+        const cerrarSesion = document.getElementById("cerrarSesion");
+
+
+        // Si hay un usuario logueado
+        if (usuarioGuardado) {
+
+            // Ocultar Login y Sign Up
+            loginLink.style.display = "none";
+            signupLink.style.display = "none";
+
+            // Mostrar usuario
+            usuarioMenu.style.display = "block";
+            botonUsuario.textContent = usuarioGuardado + " ▼";
+
+        } else {
+
+            // Si no hay sesión, ocultar el menú de usuario
+            usuarioMenu.style.display = "none";
+        }
+
+
+        // Abrir/cerrar menú
+        botonUsuario.addEventListener("click", function() {
+            menuDesplegable.classList.toggle("mostrar");
+        });
+
+
+        // Cerrar sesión
+        cerrarSesion.addEventListener("click", function() {
+
+            localStorage.removeItem("usuario");
+            localStorage.removeItem("contraseña");
+
+            window.location.href = "index.html";
+        });
+    </script>
 </body>
 </html>

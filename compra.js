@@ -189,6 +189,7 @@ if (btnVaciar) {
     carrito = [];
     guardarCarrito();
     renderizarCarrito();
+    
   });
 }
 
