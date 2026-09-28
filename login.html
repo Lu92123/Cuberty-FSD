@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Log in</title>
+    <title>Sign in</title>
     <style>
         /* 1. CENTRADO ABSOLUTO EN LA PANTALLA */
         body {
@@ -67,7 +67,7 @@
             margin-top: 10px;
         }
 
-        .enviar a  {
+        .enviar button  {
             background-color: var(--color-4, #007bff); /* Si var(--color-4) no carga, usa azul por defecto */
             padding: 15px 40px;
             border: none;
@@ -81,7 +81,7 @@
             transition: all 0.3s ease;
         }
 
-        .enviar a:hover {
+        .enviar button:hover {
             background-color: var(--color-1, #0056b3);
             color: #333333;
         }
@@ -95,7 +95,7 @@
                 <!-- Bloque Usuario -->
                 <div class="usuario">
                     <label for="nombre-de-usuario">Nombre De Usuario</label>
-                    <input type="text" id="nombre-de-usuario" placeholder="Ej: Juan Pérez" required>
+                    <input type="text" id="nombre-de-usuario" placeholder="Example_123" required>
                 </div>
                 
                 <!-- Bloque Contraseña -->
@@ -103,14 +103,43 @@
                     <label for="contraseña">Contraseña</label>
                     <input type="password" id="contraseña" placeholder="••••••••" required>
                 </div>
-                
                 <!-- Bloque Botón -->
                 <div class="enviar">
-                    <a href="index.html">Enviar</a>
+                    <button onclick="login()" type="submit" id="enviar">Enviar</button>
                 </div>
             </form>
         </div>
     </div>
+
+<script>
+    const formulario = document.querySelector("form");
+
+    formulario.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const usuarioIngresado = document.getElementById("nombre-de-usuario").value;
+        const contraseñaIngresada = document.getElementById("contraseña").value;
+
+        const usuarioGuardado = localStorage.getItem("usuario");
+        const contraseñaGuardada = localStorage.getItem("contraseña");
+
+        console.log("Usuario ingresado:", usuarioIngresado);
+        console.log("Usuario guardado:", usuarioGuardado);
+
+        console.log("Contraseña ingresada:", contraseñaIngresada);
+        console.log("Contraseña guardada:", contraseñaGuardada);
+
+        if (
+            usuarioIngresado === usuarioGuardado &&
+            contraseñaIngresada === contraseñaGuardada
+        ) {
+            window.location.href = "index.html";
+        } else {
+            alert("Usuario o contraseña incorrectos");
+        }
+    });
+</script>
+
 
 </body>
 </html>
